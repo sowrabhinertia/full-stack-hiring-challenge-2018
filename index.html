@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>file-manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <center><h3>file-manager</h3></center><hr></br></br>
+  <div class="container col-md-7" style="border:0.5px solid #cecece; border-radius:10px; padding:35px;">
+  <form action='/' method='post' enctype='multipart/form-data'>
+<div class="col-sm-12" style="margin-bottom:10px;">
+  <div class="form-group">
+ <strong><label for="name">Choose file :</label></strong>
+ <input type="file" class="form-control" id="uploadBtn" name="filename" required/></br>
+ <div class="form-group">
+         <input type="submit" onclick="change()"class="btn btn-primary col-md-2" value="Upload" />
+       </div>
+ </div>
+</div>
+</form>
+</div></br>
+
+<div class="container col-md-7" style="border:0.5px solid #cecece; border-radius:10px; padding:35px;">
+<form action='/browse' method='post' enctype='multipart/form-data'>
+<div class="col-sm-12" style="margin-bottom:10px;">
+ <div class="form-group">
+     <strong><label for="browse">Browse :</label></strong>
+     <input type="text" class="form-control" id="path" name="path" placeholder="Enter the path of the file" required/></br>
+     <div class="form-group">
+             <input type="submit" class="btn btn-primary col-md-2" value="Find" />
+           </div>
+  </div>
+</div>
+</form>
+</div></br>
+
+<div class="container col-md-7" style="border:0.5px solid #cecece; border-radius:10px; padding:35px;">
+<form action='/create' method='post' enctype='multipart/form-data'>
+<div class="col-sm-12" style="margin-bottom:10px;">
+  <div class="form-group">
+    <strong><label for="file">Create file :</label></strong></br>
+      <label for="file">file name :</label>
+      <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter the file name" required/>
+      <label for="type">file type :</label>
+      <select id="ftype" class="form-control" name="ftype">
+        <option value=".txt">.txt</option>
+        <option value=".csv">.csv</option>
+        <option value=".pdf">.pdf</option>
+        <option value=".doc">.doc</option>
+        <option value=".odt">.odt</option>
+
+      </select>
+      <label for="file">file content :</label>
+      <textarea class="form-control" id="content" placeholder="Enter the file content here.." name="content" required></textarea></br>
+      <div class="form-group">
+              <input type="submit" onclick="create()"class="btn btn-primary col-md-2" value="Create"  />
+            </div>
+    </div>
+  </div>
+</form>
+</div></br>
+<div class="container col-md-7" style="border:0.5px solid #cecece; border-radius:10px; padding:35px;">
+<form action='/delete' method='post' enctype='multipart/form-data'>
+<div class="col-sm-12" style="margin-bottom:10px;">
+    <div class="form-group">
+        <strong><label for="fname">Delete :</label></strong>
+        <input type="text" class="form-control" id="delete" name="delete" placeholder="Enter the file name to be deleted along with extension" required/>
+     </div>
+     <div class="form-group">
+             <input type="submit" onclick="delete()" class="btn btn-primary col-md-2" value="Delete" />
+     </div>
+</div>
+</form>
+</div></br>
+<center><p>&#169 Sowrabh Ullal 2018</p></center>
+</body>
+</html>
